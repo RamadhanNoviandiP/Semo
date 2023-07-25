@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:semo/pages/Profile/profile.dart';
-import 'package:semo/pages/login.dart';
+import 'package:semo/Page/Login/login.dart';
+import 'package:semo/Page/Profile/profile.dart';
 
 class SettingsNavbarPage extends StatelessWidget {
   const SettingsNavbarPage({Key? key}) : super(key: key);
@@ -13,12 +13,12 @@ class SettingsNavbarPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              backgroundImage: AssetImage('assets/images/profile_image.png'),
+              backgroundImage: AssetImage('assets/images/profile_image.jpg'),
               radius: 50,
             ),
             SizedBox(height: 20),
             Text(
-              'Angger Achmad Rouf',
+              'Ramadhan Noviandi Putra',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             ListTile(
