@@ -1,17 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:semo/pages/home.dart';
-import 'package:semo/main.dart';
-import 'package:semo/pages/register.dart';
-import 'register.dart';
+import 'package:semo/Page/Login/register.dart';
+import 'package:semo/Page/ButtonNavbar/buttonNavbar.dart';
+import 'package:semo/Page/mainHomePage.dart';
 
 class LoginPage extends StatelessWidget {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white10,
       body: Padding(
         padding: EdgeInsets.all(30.0),
         child: Column(
@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Text(
                   'se',
                   style: TextStyle(
@@ -36,32 +36,41 @@ class LoginPage extends StatelessWidget {
                 ),
               ],
             ),
-            Text('Sema Mobil Online'),
-            TextFormField(
-              controller: emailController,
-              decoration: const InputDecoration(
+            const Text('Sewa Mobil Online'),
+            const SizedBox(height: 10),
+            const TextField(
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: CupertinoColors.systemGrey4),
+                ),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blueAccent)),
                 labelText: 'Email',
               ),
             ),
-            SizedBox(height: 16.0),
-            TextFormField(
-              controller: passwordController,
-              decoration: const InputDecoration(
+            const SizedBox(height: 16.0),
+            const TextField(
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: CupertinoColors.systemGrey4),
+                ),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blueAccent)),
                 labelText: 'Password',
               ),
               obscureText: true,
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => ButtonNavBar()),
                 );
               },
               child: Text('Login'),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 5),
             RichText(
               text: TextSpan(
                 text: 'Belum punya akun? ',
@@ -82,7 +91,7 @@ class LoginPage extends StatelessWidget {
                         );
                       },
                   ),
-                  TextSpan(text: ' sekarang'),
+                  const TextSpan(text: ' sekarang'),
                 ],
               ),
             ),

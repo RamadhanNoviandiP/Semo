@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:semo/pages/Profile/edit_profile.dart';
+import 'package:semo/Page/Profile/edit_profile.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -8,7 +8,14 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        iconTheme: IconThemeData(color: Colors.blueAccent),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: const Text(
+          'Profile',
+          style: TextStyle(
+              color: Colors.blueAccent, fontWeight: FontWeight.normal),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -18,14 +25,21 @@ class ProfilePage extends StatelessWidget {
             const Center(
               child: CircleAvatar(
                 radius: 60.0,
-                backgroundImage: AssetImage('assets/images/profile_image.png'),
+                backgroundImage: AssetImage('assets/images/profile_image.jpg'),
               ),
             ),
+            const SizedBox(height: 20),
+            const Center(
+                child: Text(
+              'Ramadhan Noviandi Putra',
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            )),
             const SizedBox(height: 16.0),
             const Text(
               'User Profile',
               style: TextStyle(
-                fontSize: 24.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -33,12 +47,12 @@ class ProfilePage extends StatelessWidget {
             const ListTile(
               leading: Icon(Icons.person),
               title: Text('Name'),
-              subtitle: Text('angger achmad rouf'),
+              subtitle: Text('Ramadhan Noviandi Putra'),
             ),
             const ListTile(
               leading: Icon(Icons.email),
               title: Text('Email'),
-              subtitle: Text('angger@ambatukam.com'),
+              subtitle: Text('Rama@ambatukam.com'),
             ),
             const ListTile(
               leading: Icon(Icons.phone),
@@ -46,16 +60,18 @@ class ProfilePage extends StatelessWidget {
               subtitle: Text('+62 123-456-789'),
             ),
             SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => EditProfile(),
-                  ),
-                );
-              },
-              child: Text('Edit Profile'),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EditProfile(),
+                    ),
+                  );
+                },
+                child: Text('Edit Profile'),
+              ),
             ),
           ],
         ),

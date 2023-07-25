@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:semo/pages/bottomnavbar/favnavbar.dart';
-import 'package:semo/pages/bottomnavbar/mainpage.dart';
-import 'package:semo/pages/bottomnavbar/searchnavbar.dart';
-import 'package:semo/pages/bottomnavbar/settingnavbar.dart';
-import 'package:semo/pages/login.dart';
-import 'package:semo/pages/Profile/profile.dart';
+import 'package:semo/Page/mainHomePage.dart';
+import 'searchnavbar.dart';
+import 'settingnavbar.dart';
+import 'favnavbar.dart';
 
-class HomePage extends StatefulWidget {
+class ButtonNavBar extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _ButtonNavBarState createState() => _ButtonNavBarState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ButtonNavBarState extends State<ButtonNavBar> {
   int currentIndex = 0;
 
   List<Widget> pages = [
-    MainPage(),
+    mainHomePage(),
     searchnavbarpages(),
     favnavbarpage(),
     SettingsNavbarPage(),

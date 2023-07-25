@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:semo/pages/home.dart';
-import 'package:semo/pages/home.dart';
-import 'pages/login.dart';
-import 'package:semo/pages/Profile/profile.dart';
+import 'Page/Login/login.dart';
+import 'package:semo/Page/Profile/profile.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
-import 'package:semo/pages/login.dart';
 
 void main() {
   runApp(Semo());
