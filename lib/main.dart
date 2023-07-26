@@ -1,28 +1,24 @@
 import 'package:flutter/material.dart';
-import 'Page/Login/login.dart';
-import 'package:semo/Page/Profile/profile.dart';
-import 'package:line_icons/line_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:semo/route/app_page.dart';
+import 'package:semo/route/app_route.dart';
+import 'package:semo/theme/app_theme.dart';
 
 void main() {
   runApp(Semo());
 }
 
 class Semo extends StatelessWidget {
+  const Semo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      getPages: AppPage.list,
+      initialRoute: AppRoute.dashboard,
       debugShowCheckedModeBanner: false,
-      title: 'Semo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: GoogleFonts.robotoTextTheme(
-          Theme.of(context).textTheme,
-        ),
-      ),
-      home: LoginPage(),
+      theme: AppTheme.lightTheme,
+      themeMode: ThemeMode.light,
     );
   }
 }
