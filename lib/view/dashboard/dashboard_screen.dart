@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:semo/view/home/home_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
+  const DashboardScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
