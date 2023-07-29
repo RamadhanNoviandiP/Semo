@@ -16,7 +16,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   late String password;
 
+  bool _isLoading = false;
+
   _loginUsers() async {
+    setState(() {
+      _isLoading = true;
+    });
     if (_formKey.currentState!.validate()) {
       String res = await _authController.loginUsers(email, password);
       if (res == 'success') {
@@ -25,7 +30,9 @@ class _LoginScreenState extends State<LoginScreen> {
           return MainScreen();
         }));
       } else {
-        return showSnack(context, res);
+        setState(() {
+          _isLoading = false;
+        });
       }
     } else {
       return showSnack(context, 'masukan id yang baik dan benar');
@@ -95,11 +102,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
+                    child: _isLoading
+                        ? CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                        : Text(
+                            'Login',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
                   ),
                 ),
               ),

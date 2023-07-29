@@ -1,9 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:semo/views/buyers/auth/login_screen.dart';
-import 'package:semo/views/buyers/auth/register_screen.dart';
-import 'package:semo/views/buyers/main_screen.dart';
-import 'dart:async';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +10,7 @@ void main() async {
       appId: "1:877927497664:android:c9c117f65123b6c7811225",
       messagingSenderId: "877927497664",
       projectId: "sewa-mobil-app",
+      storageBucket: "sewa-mobil-app.appspot.com",
     ),
   );
   runApp(const Semo());
