@@ -74,6 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Padding(
                 padding: const EdgeInsets.all(14.0),
                 child: TextFormField(
+                  obscureText: true,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'kolom password tidak boleh kosong';
